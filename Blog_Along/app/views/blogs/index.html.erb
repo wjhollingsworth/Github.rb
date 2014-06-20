@@ -1,0 +1,27 @@
+<h1>Listing blogs</h1>
+
+<table class= "table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Blog text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td colspan=3><b><%= blog.title %></b></td>
+        <td><%= blog.blog_text %></td>
+        <td class="info" colspan=3><%= link_to 'View', blog %> |
+        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= will_paginate @blogs %>
+<%= link_to 'New Blog', new_blog_path %>

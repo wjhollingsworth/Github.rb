@@ -1,0 +1,78 @@
+
+
+
+<html> 
+	<head>
+		<title>JavaScript Playground</title>
+		<script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
+
+		<style>
+			body {width: 960px; margin: 20px auto;}
+		</style>
+	<head>	
+
+	
+
+	<body>
+
+		<h1>jQuery Challenges</h1>
+
+		<script>
+	// 	var h1 = document.getElementsByTagName("h1")[0];
+	// 	h1.onclick = function() {
+	// 		var ul = document.getElementsByTagName("ul")[0];
+	// 		if(ul.style.display != "none") {
+	// 			ul.style.display = "none";
+	// 	} else {
+	// 		ul.style.display ="block";
+	// 	}
+	// }
+	        $(document).ready(function () {
+	        	$("h1").on("click", function() {
+	        		$("ul").slideToggle();
+	        	})
+	        })
+
+	        $(document).ready(function () {
+	        	$("li").on("click", function() {
+	        		$(this).css("color", "red");
+	        	})
+	        })
+
+            $(document).ready(function () {
+	        	$("#add_item").on("click", function() {
+	        		$("#add_item").append("<li>Hello</li>");
+	        	})
+
+	       })
+
+            $(document).ready(function () {
+	        	$("a").click(function( event ) {
+	        		event.preventDefault( alert( "Nice Try!"));
+	        	})
+
+	       })
+
+	        // $("div")
+	        // .text("For this type jQuery found" + input.length + ".")
+	        // .css("color", "red")
+
+	        // });
+
+	        // $(document).ready(function() {
+	        // 	alert("The page has loaded!");
+	        // });
+		</script>
+		
+
+		<ul>
+			<li>Clicking the heading above should make this entire list appear and disappear.</li>
+			<li>Clicking any of these list items should turn that list item red.</li>
+			<li id="add_item">Clicking this item in particular should add a new item to the list. </li>
+		</ul>
+
+		<a href="http://www.apple.com">Clicking this paragarph should display an alert and 
+		prevent the browser from navigating away from this page.</a>
+	</body>
+
+</html>	
